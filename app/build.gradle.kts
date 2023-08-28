@@ -51,7 +51,9 @@ android {
 }
 
 dependencies {
-    implementation("com.google.android.material:material:1.3.0-alpha03")
+    implementation ("com.journeyapps:zxing-android-embedded:4.2.0")
+
+    implementation("com.google.android.material:material:1.9.0")
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -60,6 +62,10 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.appcompat.v7)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -21,6 +21,13 @@
             android:id="@+id/nav_logout"
             android:icon="@mipmap/ic_launcher_round"
             android:title="Logout" />
+        <!-- Add this item within the <group> tag -->
+        <item
+            android:id="@+id/nav_qr_scanner"
+            android:icon="@mipmap/ic_launcher_round"
+            android:title="QR Scanner" />
+
+
     </group>
 </menu>
 
