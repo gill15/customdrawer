@@ -20,9 +20,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initializeDrawer()
-        initializeQRScanner()
+
+
+
+
     }
 
+
+
+
+
+    // Inside your MainActivity class
     private fun initializeDrawer() {
         val actionbar: ActionBar? = supportActionBar
         actionbar?.apply {
@@ -32,11 +40,27 @@ class MainActivity : AppCompatActivity() {
         mDrawerLayout = findViewById(R.id.drawer_layout)
         val navigationView: NavigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_logout -> {
+                    // Handle logout
+                }
+                R.id.scan_button -> {
+                    initializeQRScanner()
+                }
+                // Add more cases here if you have more menu items
+            }
             menuItem.isChecked = true
             mDrawerLayout.closeDrawers()
             true
         }
     }
+
+
+
+
+
+
+
 
     private fun initializeQRScanner() {
         val qrScan = IntentIntegrator(this)
@@ -49,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                 mDrawerLayout.openDrawer(GravityCompat.START)
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -60,6 +85,11 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Scan failed", Toast.LENGTH_LONG).show()
         }
+
+        // Re-initialize the scanner for the next scan
+        initializeQRScanner()
+
         super.onActivityResult(requestCode, resultCode, data)
     }
+
 }
