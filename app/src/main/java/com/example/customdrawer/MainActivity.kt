@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         val actionbar: ActionBar? = supportActionBar
         actionbar?.apply {
-            setDisplayHomeAsUpEnabled(true) // Display the home button with a default icon
+            setDisplayHomeAsUpEnabled(false) // Display the home button with a default icon
         }
 
 
