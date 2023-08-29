@@ -1,8 +1,10 @@
 package com.example.customdrawer
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -11,14 +13,49 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.google.zxing.integration.android.IntentIntegrator
 
+
+
+
+
+
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var mDrawerLayout: DrawerLayout
+
+
+
+
+
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initializeDrawer()
+
+
+
+       // val toolbar: Toolbar = findViewById(R.id.toolbar)
+        //setSupportActionBar(toolbar)
+
+        mDrawerLayout = findViewById(R.id.drawer_layout)
+
+        // Find the hamburger icon view
+        val hamburgerIcon: ImageView = findViewById(R.id.hamburger_icon)
+
+        // Set click listener to open drawer
+        hamburgerIcon.setOnClickListener {
+            // Open the navigation drawer
+            mDrawerLayout.openDrawer(GravityCompat.START) // Use END for right-sided drawer
+        }
+
+
+
 
 
 
